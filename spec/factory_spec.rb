@@ -68,7 +68,7 @@ RSpec.describe 'Factory' do
     joe = Customer.new('Joe Smith', '123 Maple, Anytown NC', 12_345)
 
     joe['name'] = 'Luke'
-    joe[:zip]   = '90210'
+    joe[:zip] = '90210'
 
     expect(joe.name).to eq('Luke')
     expect(joe.zip).to eq('90210')
