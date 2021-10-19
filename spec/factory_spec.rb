@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 require_relative '../lib/factory'
-
+require 'pry'
 RSpec.describe 'Factory' do
   before do
-    if Object.constants.include?(:Customer)
-      Object.send(:remove_const, :Customer)
-    end
+    Object.send(:remove_const, :Customer) if Object.constants.include?(:Customer)
   end
 
   it 'creates factory in a namespace' do
@@ -68,7 +66,7 @@ RSpec.describe 'Factory' do
     joe = Customer.new('Joe Smith', '123 Maple, Anytown NC', 12_345)
 
     joe['name'] = 'Luke'
-    joe[:zip] = '90210'
+    joe[:zip]   = '90210'
 
     expect(joe.name).to eq('Luke')
     expect(joe.zip).to eq('90210')
