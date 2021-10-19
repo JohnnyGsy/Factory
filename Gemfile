@@ -2,10 +2,6 @@
 
 source 'https://rubygems.org'
 
-gem 'rspec'
 gem 'pry'
-MyClass = Stuct.new do
-  def my_method
-    'Method call'
-  end
-end
+gem 'rspec'
+gem 'rubocop'
